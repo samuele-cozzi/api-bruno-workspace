@@ -1,0 +1,28 @@
+info:
+  name: HO02-chat
+  type: http
+  seq: 1
+
+http:
+  method: POST
+  url: http://raspberrypi.home.arpa:11434/api/chat
+  headers:
+    - name: Content-Type
+      value: application/json
+  body:
+    type: json
+    data: |-
+      {
+        "model": "qwen3:1.7b", 
+        "messages": [{
+          "role": "user", 
+          "content": "create a markdown file string of the bookmark of the website https://www.aboutme.com"
+        }]
+      }
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 30000
+  followRedirects: true
+  maxRedirects: 5
