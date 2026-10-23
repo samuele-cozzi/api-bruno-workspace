@@ -1,0 +1,31 @@
+info:
+  name: query
+  type: http
+  seq: 1
+
+http:
+  method: POST
+  url: https://{{ALGOLIA_APPLICATION_ID}}.algolia.net/1/indexes/{{ALGOLIA_INDEX_NAME}}/query
+  headers:
+    - name: accept
+      value: application/json
+    - name: content-type
+      value: application/json
+    - name: x-algolia-api-key
+      value: "{{ALGOLIA_API_KEY}}"
+    - name: x-algolia-application-id
+      value: "{{ALGOLIA_APPLICATION_ID}}"
+  body:
+    type: json
+    data: |-
+      {
+        "params": "hitsPerPage=2&getRankingInfo=1",
+        "query": "wil"
+      }
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

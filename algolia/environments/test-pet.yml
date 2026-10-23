@@ -1,0 +1,8 @@
+name: test-pet
+variables:
+  - name: ALGOLIA_APPLICATION_ID
+    value: AW4PMFBDV7
+  - name: ALGOLIA_INDEX_NAME
+    value: algolia_pets_sample_dataset
+  - name: ALGOLIA_API_KEY
+    value: '{{process.env.ALGOLIA_API_KEY}}'
