@@ -5,7 +5,7 @@ info:
 
 http:
   method: POST
-  url: http://raspberrypi.home.arpa:11434/api/chat
+  url: "{{base_url}}/api/chat"
   headers:
     - name: Content-Type
       value: application/json
@@ -16,13 +16,15 @@ http:
         "model": "qwen3:1.7b", 
         "messages": [{
           "role": "user", 
-          "content": "create a markdown file string of the bookmark of the website https://www.aboutme.com"
-        }]
+          "content": "Ciao"
+        }],
+        "stream": false,
+        "think": true
       }
   auth: inherit
 
 settings:
   encodeUrl: true
-  timeout: 30000
+  timeout: 120000
   followRedirects: true
   maxRedirects: 5

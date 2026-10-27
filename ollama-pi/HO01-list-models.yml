@@ -5,7 +5,7 @@ info:
 
 http:
   method: GET
-  url: http://raspberrypi.home.arpa:11434/hailo/v1/list
+  url: "{{base_url}}/hailo/v1/list"
   auth: inherit
 
 settings:

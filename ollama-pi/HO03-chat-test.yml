@@ -1,0 +1,33 @@
+info:
+  name: HO03-chat-test
+  type: http
+  seq: 4
+
+http:
+  method: POST
+  url: "{{base_url}}/api/chat"
+  headers:
+    - name: Content-Type
+      value: application/json
+  body:
+    type: json
+    data: |-
+      {
+        "model": "qwen3:1.7b",
+        "think": true,
+        "messages": [
+          {
+            "content": "Generate a Markdown (`.md`) text that documents a bookmarked webpage (https://www.aboutyou.it/) using the template below. \\n",
+            "role": "user"
+          }
+        ],
+        "options": {},
+        "stream": false
+      }
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 120000
+  followRedirects: true
+  maxRedirects: 5
